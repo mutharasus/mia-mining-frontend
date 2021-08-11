@@ -9,6 +9,8 @@ const Blob = props => (
   </tr>
 )
 
+const backendUri = 'https://mia-mining-backend.mutharasus.repl.co';
+
 export default class Charts extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,7 @@ export default class Charts extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/blobs/')
+    axios.get(backendUri+'/blobs/')
       .then(response => {
         this.setState({ blobs: response.data })
       })

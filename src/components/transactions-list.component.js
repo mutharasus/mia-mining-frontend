@@ -11,6 +11,8 @@ const Transaction = props => (
   </tr>
 )
 
+const backendUri = 'https://mia-mining-backend.mutharasus.repl.co';
+
 export default class TransactionsList extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ export default class TransactionsList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/transactions/')
+    axios.get(backendUri+'/transactions/')
       .then(response => {
         this.setState({ transactions: response.data })
       })
